@@ -2,14 +2,16 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class DemoApplication {
 
 	public static void main(String[] args) {
-//		SpringApplication.run(DemoApplication.class, args);
+		ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
+        var OrderService = context.getBean(OrderService.class);
         //injecting dependency here, modular code
-        var OrderService = new OrderService(new PayPalPaymentService()); //just change the dependency here in the parameter to change payment service
+//        var OrderService = new OrderService(new PayPalPaymentService()); //just change the dependency here in the parameter to change payment service
 //        OrderService.setPaymentService(new StripePaymentService());
         OrderService.placeOrder();
 	}
