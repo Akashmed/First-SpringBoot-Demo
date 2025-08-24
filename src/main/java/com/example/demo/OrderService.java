@@ -3,7 +3,7 @@ package com.example.demo;
 public class OrderService {
     private PaymentService paymentService;
 
-    public OrderService(PaymentService paymentService){
+    public OrderService(PaymentService paymentService){ // dependency injection using constructor
         this.paymentService = paymentService;
     }
     public void placeOrder(){
