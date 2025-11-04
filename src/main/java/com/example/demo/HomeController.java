@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @Value("${spring.application.name}") //take value from application properties and put it to appName;
     private String appName;
-    @RequestMapping("/") // define route and tell what to do when request comes to this route
+    @RequestMapping("/home") // define route and tell what to do when request comes to this route
     public String index(){
         System.out.println("Appname " + appName);
         return ("index.html");

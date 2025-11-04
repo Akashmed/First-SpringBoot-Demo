@@ -7,16 +7,17 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
+    public static void main(String[] args) {
+        ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
         var OrderService = context.getBean(OrderService.class);
 //        //injecting dependency here, modular code
 //        var OrderService = new OrderService(new PayPalPaymentService()); //just change the dependency here in the parameter to change payment service
 //        OrderService.setPaymentService(new StripePaymentService());
         OrderService.placeOrder();
 
+
 //        var notificationManager = context.getBean(NotificationManager.class);
 //        notificationManager.sendMessage("Hey, this is a test.");
-	}
+    }
 
 }
