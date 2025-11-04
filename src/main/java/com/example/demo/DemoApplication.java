@@ -13,7 +13,12 @@ public class DemoApplication {
 //        //injecting dependency here, modular code
 //        var OrderService = new OrderService(new PayPalPaymentService()); //just change the dependency here in the parameter to change payment service
 //        OrderService.setPaymentService(new StripePaymentService());
+
         OrderService.placeOrder();
+
+        //methods of a class that implements interface, can be called like this using that interface
+        PaymentService paymentService = new PayPalPaymentService();
+        paymentService.processPayment(100);
 
 
 //        var notificationManager = context.getBean(NotificationManager.class);
